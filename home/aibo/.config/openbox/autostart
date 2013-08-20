@@ -1,0 +1,15 @@
+xsetroot -solid "#000000"
+
+dropbox start &
+numlockx &
+(ping -c1 raspi && mount /mnt/music) &
+urxvtd -q -f -o &
+(sleep 60 && /usr/local/bin/backuperinnerung) &
+pidof mpdscribble >& /dev/null
+if [ $? -ne 0 ]; then
+  mpdscribble &
+fi
+sleep 1
+conky -qc $HOME/.conkyrc &
+thunderbird &
+liferea &

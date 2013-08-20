@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/ file:///usr/X11R6/share/openbox/menu.xsd">
+	<menu id="root-menu" label="openbox3">
+		<separator label="Archlinux"/>
+		<item label="Ausführen">
+			<action name="Execute">
+				<execute>
+					gmrun
+				</execute>
+			</action>
+		</item>
+		<separator/>
+		<menu execute="~/.config/openbox/pipemenus/obpipemenu-places" id="places" label="Home"/>
+		<menu execute="~/.config/openbox/pipemenus/obpipemenu-places /" id="root" label="Root"/>
+		<separator/>
+		<menu id="client-list-combined-menu"/>
+		<separator label="Anwendungen"/>
+		<item label="Terminal">
+			<action name="Execute">
+				<execute>
+					/usr/local/bin/urxvtcc
+				</execute>
+			</action>
+		</item>
+		<item label="Browser">
+			<action name="Execute">
+				<execute>
+					firefox
+				</execute>
+			</action>
+		</item>
+		<item label="Editor">
+			<action name="Execute">
+				<execute>
+					geany
+				</execute>
+			</action>
+		</item>
+		<separator/>
+  
+  
+    <menu id="Audio und Video" label="Audio und Video">
+			<item label="Easytag">
+				<action name="Execute">
+					<execute>
+						easytag
+					</execute>
+				</action>
+			</item>
+			<!--<item label="Sonata">-->
+				<!--<action name="Execute">-->
+					<!--<execute>-->
+						<!--sonata-->
+					<!--</execute>-->
+				<!--</action>-->
+			<!--</item>-->
+			<item label="VLC">
+				<action name="Execute">
+					<execute>
+						vlc
+					</execute>
+				</action>
+			</item>
+      <item label="Lingot">
+        <action name="Execute">
+          <execute>
+            lingot
+          </execute>
+        </action>
+      </item>
+		</menu>
+
+
+    <menu id="Büro" label="Büro">
+			<item label="ePDFview">
+				<action name="Execute">
+					<execute>
+						epdfview
+					</execute>
+				</action>
+			</item>
+			<!--<item label="LyX">-->
+				<!--<action name="Execute">-->
+					<!--<execute>-->
+						<!--lyx-->
+					<!--</execute>-->
+				<!--</action>-->
+			<!--</item>-->
+			<item label="Tabellenkalkulation">
+				<action name="Execute">
+					<execute>
+						gnumeric
+					</execute>
+				</action>
+			</item>
+			<item label="Textverarbeitung">
+				<action name="Execute">
+					<execute>
+						abiword
+					</execute>
+				</action>
+			</item>
+		</menu>
+
+
+    <menu id="Entwicklung" label="Entwicklung">
+			<item label="CMake">
+				<action name="Execute">
+					<execute>
+						cmake-gui
+					</execute>
+				</action>
+			</item>
+			<item label="Qt Assistant">
+				<action name="Execute">
+					<execute>
+						/usr/bin/assistant
+					</execute>
+				</action>
+			</item>
+			<item label="Qt Creator">
+				<action name="Execute">
+					<execute>
+						/usr/bin/qtcreator
+					</execute>
+				</action>
+			</item>
+			<item label="Qt Designer">
+				<action name="Execute">
+					<execute>
+						/usr/bin/designer
+					</execute>
+				</action>
+			</item>
+			<item label="Qt Linguist">
+				<action name="Execute">
+					<execute>
+						/usr/bin/linguist
+					</execute>
+				</action>
+			</item>
+		</menu>
+
+
+    <menu id="Grafik" label="Grafik">
+			<item label="Dokumentenbetrachter">
+				<action name="Execute">
+					<execute>
+						epdfview
+					</execute>
+				</action>
+			</item>
+			<item label="Farbauswahl">
+				<action name="Execute">
+					<execute>
+						gcolor2
+					</execute>
+				</action>
+			</item>
+			<item label="Gimp">
+				<action name="Execute">
+					<execute>
+						gimp
+					</execute>
+				</action>
+			</item>
+			<item label="Image Viewer">
+				<action name="Execute">
+					<execute>
+						viewnior
+					</execute>
+				</action>
+			</item>
+		</menu>
+
+
+    <menu id="Netzwerk" label="Netzwerk">
+			<item label="Firefox">
+				<action name="Execute">
+					<execute>
+						firefox
+					</execute>
+				</action>
+			</item>
+			<item label="Liferea Feedreader">
+				<action name="Execute">
+					<execute>
+						liferea
+					</execute>
+				</action>
+			</item>
+			<item label="Museeq">
+				<action name="Execute">
+					<execute>
+						museeq
+					</execute>
+				</action>
+			</item>
+			<!--<item label="Pidgin">-->
+				<!--<action name="Execute">-->
+					<!--<execute>-->
+						<!--pidgin-->
+					<!--</execute>-->
+				<!--</action>-->
+			<!--</item>-->
+			<item label="Skype">
+				<action name="Execute">
+					<execute>
+						skype
+					</execute>
+				</action>
+			</item>
+			<item label="Thunderbird">
+				<action name="Execute">
+					<execute>
+						thunderbird
+					</execute>
+				</action>
+			</item>
+		</menu>
+
+
+    <menu id="Systemwerkzeuge" label="Systemwerkzeuge">
+			<item label="Druckerverwaltung">
+				<action name="Execute">
+					<execute>
+						/usr/bin/xdg-open http://localhost:631/
+					</execute>
+				</action>
+			</item>
+			<item label="TrueCrypt">
+				<action name="Execute">
+					<execute>
+						/usr/bin/truecrypt
+					</execute>
+				</action>
+			</item>
+		</menu>
+
+
+    <menu id="Zubehör" label="Zubehör">
+			<item label="Brasero">
+				<action name="Execute">
+					<execute>
+						brasero
+					</execute>
+				</action>
+			</item>
+			<item label="Dateimanager">
+				<action name="Execute">
+					<execute>
+						/usr/local/bin/urxvtcc -e ranger
+					</execute>
+				</action>
+			</item>
+			<item label="HP Device Manager">
+				<action name="Execute">
+					<execute>
+						hp-toolbox
+					</execute>
+				</action>
+			</item>
+			<item label="KeePassX">
+				<action name="Execute">
+					<execute>
+						keepassx
+					</execute>
+				</action>
+			</item>
+			<item label="Tipp10">
+				<action name="Execute">
+					<execute>
+						tipp10
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<separator label="System"/>
+
+
+		<item label="Bildschirm sperren">
+			<action name="Execute">
+				<execute>
+					xlock -mode blank
+				</execute>
+			</action>
+		</item>
+
+
+    <menu id="exit-menu" label="Beenden">
+			<item label="Abmelden">
+				<action name="Execute">
+					<command>openbox --exit</command>
+				</action>
+			</item>
+      <item label="Standby">
+        <action name="Execute">
+          <command>systemctl suspend</command>
+        </action>
+      </item>
+      <item label="Ruhezustand">
+        <action name="Execute">
+          <command>systemctl hybrid-sleep</command>
+        </action>
+      </item>
+			<item label="Neustart">
+        <action name="Execute">
+          <command>systemctl reboot</command>
+        </action>
+			</item>
+			<item label="Ausschalten">
+        <action name="Execute">
+          <command>systemctl poweroff</command>
+        </action>
+			</item>
+		</menu>
+	</menu>
+</openbox_menu>
