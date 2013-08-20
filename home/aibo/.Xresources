@@ -1,0 +1,160 @@
+! rxvt-unicode ---------------------------------------------------------------
+
+! font preference
+!URxvt.font:       xft:Bitstream Vera Sans Mono:pixelsize=12
+!URxvt.font:       xft:Anonymous Pro:pixelsize=15:antialiasing=true:cleartype=true
+!URxvt.font:       xft:Terminus:pixelsize=10
+URxvt.font:       xft:Inconsolata:pixelsize=14
+!URxvt.font:      -*-terminus-medium-*-*--12-*-*-*-*-*-iso8859-1
+!URxvt.boldFont:   xft:Bitstream Vera Sans Mono:bold:pixelsize=12
+!URxvt.boldFont:   xft:Anonymous Pro:bold:pixelsize=15:antialiasing=true:cleartype=true
+!URxvt.boldFont:   xft:Terminus:bold:pixelsize=10
+URxvt.boldFont:   xft:Inconsolata:bold:pixelsize=14
+!URxvt.boldFont:  -*-terminus-bold-*-*--12-*-*-*-*-*-iso8859-1
+!urxvtq.font:      xft:Inconsolata:pixelsize=15
+!urxvtq.boldFont:  xft:Inconsolata:bold:pixelsize=15
+urxvtq.font:      xft:Inconsolata:pixelsize=14
+urxvtq.boldFont:  xft:Inconsolata:bold:pixelsize=14
+urxvtblinken.font:      xft:Inconsolata:pixelsize=15
+urxvtblinken.boldFont:  xft:Inconsolata:bold:pixelsize=15
+! scroll preferences
+URxvt*scrollBar:	false
+URxvt*scrollstyle:	plain
+urxvt*scrollBar_right:  true
+!urxvt*saveLines:          32767
+!urxvt*saveLines:          8192
+urxvt*saveLines:          512
+! initial size
+URxvt*geometry:         103x30
+URxvt*internalBorder:   5
+! transparency
+URxvt.depth:      32
+!URxvt.background: rgba:1111/1111/1111/dddd
+! tabbed
+URxvt.perl-ext-common:	default,clipboard,matcher
+URxvt.tabbed.tabbar-fg: 14
+URxvt.tabbed.tabbar-bg: -1
+URxvt.tabbed.tab-fg:    -2
+URxvt.tabbed.tab-bg:    -1
+! URL-handling
+!URxvt.urlLauncher:      /usr/bin/chromium
+!URxvt.urlLauncher:      /usr/bin/luakit
+URxvt.url-launcher:      /usr/bin/firefox
+urxvtq.url-launcher:     /usr/bin/firefox
+urxvtblinken.urlLauncher:     /usr/bin/firefox
+URxvt.matcher.button:   1 
+URxvt*iconFile:         /home/aibo/.icons/Utilities-terminal.svg
+
+! Xterm ----------------------------------------------------------------------
+
+Xterm*toolBar: false
+!!XTerm*faceName: terminus:pixelsize=12
+XTerm*faceName: inconsolata:pixelsize=15
+XTerm*geometry: 100x25
+XTerm*dynamiccolors: true
+xterm*Background: black
+xterm*Foreground: white
+xterm*scrollTtyOutput: false
+xterm*scrollKey: true
+xterm*iconName: Xterm
+XTerm*termName: terminal
+xterm*metaSendsEscape: true
+
+! Xscreensaver ---------------------------------------------------------------
+
+!font settings
+xscreensaver.Dialog.headingFont:		-*-terminus-bold-*-*--14-*-*-*-*-*-*
+xscreensaver.Dialog.bodyFont:			-*-terminus-medium-*-*--14-*-*-*-*-*-*	
+xscreensaver.Dialog.labelFont:			-*-terminus-medium-*-*--14-*-*-*-*-*-*
+xscreensaver.Dialog.unameFont:			-*-terminus-medium-*-*--14-*-*-*-*-*-*
+xscreensaver.Dialog.buttonFont:			-*-terminus-bold-*-*--14-*-*-*-*-*-*
+xscreensaver.Dialog.dateFont:			-*-terminus-medium-*-*--14-*-*-*-*-*-*
+xscreensaver.Dialog.passwdFont:			-*-terminus-bold-*-*--14-*-*-*-*-*-*
+!general dialog box (affects main hostname, username, password text)
+xscreensaver.Dialog.foreground:         	#ffffff
+xscreensaver.Dialog.background:         	#111111
+xscreensaver.Dialog.topShadowColor:     	#111111
+xscreensaver.Dialog.bottomShadowColor:  	#111111
+xscreensaver.Dialog.Button.foreground:  	#ffffff
+xscreensaver.Dialog.Button.background:  	#666666
+!username/password input box and date text colour
+xscreensaver.Dialog.text.foreground:    	#666666
+xscreensaver.Dialog.text.background:    	#ffffff
+xscreensaver.Dialog.internalBorderWidth:	24
+xscreensaver.Dialog.borderWidth:        	20
+xscreensaver.Dialog.shadowThickness:    	2
+!timeout bar (background is actually determined by Dialog.text.background)
+xscreensaver.passwd.thermometer.foreground:  	#1793d1
+xscreensaver.passwd.thermometer.background:  	#666666
+xscreensaver.passwd.thermometer.width:       	8
+!datestamp format--see the strftime(3) manual page for details
+xscreensaver.dateFormat:    			
+!%H:%M    %a, %d.%m.%Y
+
+! color scheme ---------------------------------------------------------------
+
+!*background: rgb:10/10/10
+*background: rgb:00/00/00
+*foreground: rgb:d3/d3/d3
+
+! Black
+!*color0:  #2E3436
+*color0:  #000000
+*color8:  #555753
+! Red
+*color1:  #CC0000
+*color9:  #EF2929
+! Green
+*color2:  #4E9A06
+*color10: #8AE234
+! Yellow
+*color3:  #C4A000
+*color11: #FCE94F
+! Blue
+*color4:  #3465A4
+*color12: #729FCF
+! Purple
+*color5:  #75507B
+*color13: #AD7FA8
+! Cyan
+*color6:  #06989A
+*color14: #34E2E2
+! White
+*color7:  #D3D7CF
+*color15: #EEEEEC
+
+! Digerati {{{
+!*color0:  #303030
+!*color1:  #c03000
+!*color2:  #b1d631
+!*color3:  #fecf35
+!*color4:  #426870
+!*color5:  #6D506D
+!*color6:  #4bb5c1
+!*color7:  #e2e2e5
+!*color8:  #5F5F5F
+!*color9:  #FF3A78
+!*color10: #A6CD07
+!*color11: #B5C865
+!*color12: #4A7781
+!*color13: #FF3B77
+!*color14: #4bb5c1
+!*color15: #e2e2e5
+! }}}
+
+Xcursor.theme:  whiteglass
+Xcursor.size:  16 
+
+xlock.font: -*-terminus-medium-*-*--18-*-*-*-*-*-iso8859-1
+xlock.planfont: -*-terminus-medium-*-*--18-*-*-*-*-*-iso8859-1
+xlock.mode: blank
+
+!Xft.dpi: 96
+Xft.antialias: true
+!Xft.rgba: rgb
+!Xft.hinting: true
+!Xft.rgba: false
+!Xft.hinting: false
+!Xft.hintstyle: hintslight
+!Xft.lcdfilter: lcddefault
+!Xft.cleartype: true

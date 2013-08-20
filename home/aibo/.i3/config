@@ -13,7 +13,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
@@ -28,7 +29,8 @@ floating_modifier $mod
 bindsym $mod+Return exec urxvtcc
 
 # kill focused window
-bindsym $mod+Shift+q kill
+#bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -58,10 +60,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+Shift+h split h
+bindsym $mod+g split h
 
 # split in vertical orientation
-bindsym $mod+Shift+v split v
+bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -154,5 +156,40 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        output HDMI1
+        workspace_buttons yes
         status_command i3status
+        position top
 }
+
+bar {
+        output VGA1
+        workspace_buttons yes
+        position top
+}
+
+# set border style: normal,1pixel,none,pixel
+new_window normal 1
+for_window [class="^URxvt$"] border 1pixel
+for_window [class="^Keepassx$"] floating enable
+#new_float normal 1
+# key binding that toggles the styles we like
+bindsym $mod+b border 1pixel
+bindsym $mod+Shift+b border normal 1
+
+# assign window to a certain view
+assign [class="^luakit$"] 2
+assign [class="^Uzbl"] 2
+assign [class="^Firefox$"] 2
+assign [class="^Thunderbird$"] 3
+
+# bind some apps
+bindsym $mod+Mod1+l exec luakit
+bindsym $mod+Mod1+u exec uzbl-tabbed
+bindsym $mod+Mod1+f exec firefox
+bindsym $mod+Escape exec /usr/bin/i3lock -c 000000 --dpms
+
+# bind media keys
+bindsym XF86AudioLowerVolume exec /usr/local/bin/mixer-osd voldown
+bindsym XF86AudioRaiseVolume exec /usr/local/bin/mixer-osd volup
+bindsym XF86AudioMute exec /usr/local/bin/mixer-osd mute
