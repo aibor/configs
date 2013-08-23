@@ -85,29 +85,43 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+y focus child
 
+# define workspace names
+
+set $ws1 "1: main"
+set $ws2 "2: www"
+set $ws3 "3: mail"
+set $ws4 "4: term"
+set $ws5 "5: term"
+set $ws6 "6: term"
+set $ws7 "7: term"
+set $ws8 "8: term"
+set $ws9 "9: office"
+set $ws10 "10: misc"
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+#bindsym $mod+1 workspace 1
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # move current workspace to output
 bindsym $mod+comma move workspace to output left
@@ -158,7 +172,8 @@ bindsym $mod+r mode "resize"
 bar {
         output HDMI1
         workspace_buttons yes
-        status_command i3status
+        #status_command i3status
+        status_command /home/aibo/.config/i3status/mpd_wrapper.sh
         position top
 }
 
@@ -178,10 +193,10 @@ bindsym $mod+b border 1pixel
 bindsym $mod+Shift+b border normal 1
 
 # assign window to a certain view
-assign [class="^luakit$"] 2
-assign [class="^Uzbl"] 2
-assign [class="^Firefox$"] 2
-assign [class="^Thunderbird$"] 3
+assign [class="^luakit$"] $ws2
+assign [class="^Uzbl"] $ws2
+assign [class="^Firefox$"] $ws2
+assign [class="^Thunderbird$"] $ws3
 
 # bind some apps
 bindsym $mod+Mod1+l exec luakit

@@ -8,9 +8,11 @@ general {
 order += "volume master"
 order += "disk /"
 order += "disk /home"
+order += "run_watch einar"
+order += "run_watch hans"
 order += "run_watch DHCP"
 order += "ethernet br0"
-order += "load"
+order += "ipv6"
 order += "time"
 
 volume master {
@@ -20,29 +22,43 @@ volume master {
         mixer_idx = 0
 }
 
+ipv6 {
+        format_up = " %ip "
+        format_down = " no IPv6 available "
+}
+
 ethernet br0 {
         # if you use %speed, i3status requires root privileges
-        #format_up = "E: %ip (%speed)"
-        format_up = "E: %ip"
-        format_down = "E: down"
+        format_up = " br0: %ip "
+        format_down = " br0: down "
 }
 
 run_watch DHCP {
         pidfile = "/run/dhcpcd*.pid"
+        #format = " %title: %status "
+        format = " %title "
+}
+
+run_watch einar {
+        pidfile = "/run/openvpn_einar.pid"
+        #format = " VPN %title: %status "
+        format = " VPN %title "
+}
+
+run_watch hans {
+        pidfile = "/run/openvpn_hans.pid"
+        #format = " VPN %title: %status "
+        format = " VPN %title "
 }
 
 time {
-        format = "%d.%m.%Y %H:%M"
-}
-
-load {
-        format = "load avg: %1min %5min %15min"
+        format = " %d.%m.%Y %H:%M "
 }
 
 disk "/" {
-        format = "/ %free free"
+        format = " / %free free "
 }
 
 disk "/home" {
-        format = "~ %free free"
+        format = " ~ %free free "
 }
