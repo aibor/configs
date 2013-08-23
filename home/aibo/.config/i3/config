@@ -199,12 +199,15 @@ assign [class="^Firefox$"] $ws2
 assign [class="^Thunderbird$"] $ws3
 
 # bind some apps
-bindsym $mod+Mod1+l exec luakit
-bindsym $mod+Mod1+u exec uzbl-tabbed
-bindsym $mod+Mod1+f exec firefox
-bindsym $mod+Escape exec /usr/bin/i3lock -c 000000 --dpms
+bindsym $mod+Mod1+l exec --no-startup-id luakit
+bindsym $mod+Mod1+u exec --no-startup-id uzbl-tabbed
+bindsym $mod+Mod1+f exec --no-startup-id firefox
+bindsym $mod+Escape exec --no-startup-id /usr/bin/i3lock -c 000000 --dpms
 
 # bind media keys
-bindsym XF86AudioLowerVolume exec /usr/local/bin/mixer-osd voldown
-bindsym XF86AudioRaiseVolume exec /usr/local/bin/mixer-osd volup
-bindsym XF86AudioMute exec /usr/local/bin/mixer-osd mute
+bindsym XF86AudioLowerVolume exec --no-startup-id /usr/local/bin/mixer-osd voldown
+bindsym XF86AudioRaiseVolume exec --no-startup-id /usr/local/bin/mixer-osd volup
+bindsym XF86AudioMute exec --no-startup-id /usr/local/bin/mixer-osd mute
+bindsym XF86AudioPlay exec --no-startup-id /usr/bin/mpc -q toggle
+bindsym XF86AudioNext exec --no-startup-id /usr/bin/mpc -q next
+bindsym XF86AudioPrev exec --no-startup-id /usr/bin/mpc -q prev
