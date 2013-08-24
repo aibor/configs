@@ -8,4 +8,5 @@ xsetroot -solid "#000000"
 
 [[ -f $HOME/.Xresources ]] && xrdb -merge $HOME/.Xresources
 
-exec openbox-session
+#exec openbox-session
+exec i3

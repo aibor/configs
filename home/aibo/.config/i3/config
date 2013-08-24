@@ -88,9 +88,9 @@ bindsym $mod+y focus child
 # define workspace names
 
 set $ws1 "1: main"
-set $ws2 "2: www"
-set $ws3 "3: mail"
-set $ws4 "4: term"
+set $ws2 "2: mail"
+set $ws3 "3: feed"
+set $ws4 "4: pdf"
 set $ws5 "5: term"
 set $ws6 "6: term"
 set $ws7 "7: term"
@@ -184,25 +184,41 @@ bar {
 }
 
 # set border style: normal,1pixel,none,pixel
-new_window normal 1
+#new_window normal 1
+new_window 1pixel
 for_window [class="^URxvt$"] border 1pixel
 for_window [class="^Keepassx$"] floating enable
+for_window [class="^MPlayer$"] floating enable
+for_window [class="^Viewnior$"] floating enable
 #new_float normal 1
+
 # key binding that toggles the styles we like
 bindsym $mod+b border 1pixel
 bindsym $mod+Shift+b border normal 1
 
 # assign window to a certain view
-assign [class="^luakit$"] $ws2
-assign [class="^Uzbl"] $ws2
-assign [class="^Firefox$"] $ws2
-assign [class="^Thunderbird$"] $ws3
+assign [class="^luakit$"] $ws1
+assign [class="^Uzbl"] $ws1
+assign [class="^Firefox$"] $ws1
+assign [class="^Thunderbird$"] $ws2
+assign [class="^Liferea$"] $ws3
+assign [class="^MPlayer$"] $ws3
+assign [class="^Zathura$"] $ws4
+assign [class="^libreoffice*"] $ws9
+
+# assign workspace to a certain output
+workspace $ws1 output HDMI1
+workspace $ws2 output VGA1
+workspace $ws3 output VGA1
 
 # bind some apps
 bindsym $mod+Mod1+l exec --no-startup-id luakit
 bindsym $mod+Mod1+u exec --no-startup-id uzbl-tabbed
 bindsym $mod+Mod1+f exec --no-startup-id firefox
 bindsym $mod+Escape exec --no-startup-id /usr/bin/i3lock -c 000000 --dpms
+
+# bind exit
+bindsym $mod+Delete exec --no-startup-id i3lock -c '#000000' --dpms && systemctl hybrid-sleep
 
 # bind media keys
 bindsym XF86AudioLowerVolume exec --no-startup-id /usr/local/bin/mixer-osd voldown
@@ -211,3 +227,6 @@ bindsym XF86AudioMute exec --no-startup-id /usr/local/bin/mixer-osd mute
 bindsym XF86AudioPlay exec --no-startup-id /usr/bin/mpc -q toggle
 bindsym XF86AudioNext exec --no-startup-id /usr/bin/mpc -q next
 bindsym XF86AudioPrev exec --no-startup-id /usr/bin/mpc -q prev
+
+# autostart
+exec --no-startup-id i3-msg 'workspace $ws1; exec urxvt; split v; exec urxvtcc' && sleep .1 && i3-msg 'focus parent; split h; exec --no-startup-id firefox' && sleep 3 && i3-msg '[class="^Firefox$"] resize grow width 10px' && i3-msg 'exec --no-startup-id thunderbird; exec --no-startup-id liferea; exec --no-startup-id dropbox'
