@@ -26,7 +26,7 @@
     set number                        " line numbers
     set ruler                         " show cursor position under each window	
     set showmode
-    set nowrap
+    set wrap
     set linebreak                     " attempt to wrap lines cleanly
     set showmatch                     " show matching brackets and stuff 
     set backspace=indent,eol,start    " allow backspacing over everything

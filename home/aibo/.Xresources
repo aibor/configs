@@ -16,7 +16,8 @@ urxvtq.boldFont:  xft:Inconsolata:bold:pixelsize=14
 URxvt*scrollBar:	false
 URxvt*scrollstyle:	plain
 urxvt*scrollBar_right:  true
-urxvt*saveLines:          512
+!urxvt*saveLines:          512
+urxvt*saveLines:          4096
 
 ! initial size
 URxvt*geometry:         103x30
