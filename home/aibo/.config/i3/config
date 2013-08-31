@@ -217,10 +217,11 @@ workspace $ws3 output VGA1
 bindsym $mod+Mod1+l exec --no-startup-id luakit
 bindsym $mod+Mod1+u exec --no-startup-id uzbl-tabbed
 bindsym $mod+Mod1+f exec --no-startup-id firefox
+bindsym $mod+Mod1+x exec --no-startup-id keepassx
 bindsym $mod+Escape exec --no-startup-id /usr/bin/i3lock -c 000000 --dpms
 
 # bind exit
-bindsym $mod+Delete exec --no-startup-id i3lock -c '#000000' --dpms && systemctl hybrid-sleep
+bindsym $mod+Delete exec --no-startup-id i3lock -c '#000000' && systemctl hybrid-sleep
 
 # bind media keys
 bindsym XF86AudioLowerVolume exec --no-startup-id /usr/local/bin/mixer-osd voldown
@@ -231,4 +232,4 @@ bindsym XF86AudioNext exec --no-startup-id /usr/bin/mpc -q next
 bindsym XF86AudioPrev exec --no-startup-id /usr/bin/mpc -q prev
 
 # autostart
-exec --no-startup-id i3-msg 'workspace $ws1; exec urxvt; split v; exec urxvtcc' && sleep .1 && i3-msg 'focus parent; split h; exec --no-startup-id firefox' && sleep 3 && i3-msg '[class="^Firefox$"] resize grow width 10px' && i3-msg 'exec --no-startup-id thunderbird; exec --no-startup-id liferea; exec --no-startup-id dropbox start'
+exec --no-startup-id i3-msg 'workspace $ws1; exec urxvt; split v; exec urxvtcc' && sleep .1 && i3-msg 'focus parent; split h; exec --no-startup-id firefox' && sleep 3 && i3-msg '[class="^Firefox$"] resize grow width 10px' && i3-msg 'exec --no-startup-id thunderbird; exec --no-startup-id liferea; exec --no-startup-id dropbox start; exec --no-startup-id pidof mpdscribble > /dev/null || mpdscribble'
