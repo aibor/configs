@@ -60,8 +60,8 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias df='df -h'
 alias du='du -c -h'
-alias ssh="sshkchk && ssh $@"
-alias git="sshkchk && git $@"
+#alias ssh="sshkchk && ssh"
+#alias git="sshkchk && git"
 alias dmenu_run="dmenu_run -fn -*-terminus-bold-*-*--14-*-*-*-*-*-* -p 'Do:' -nb '#1a1a1a' -nf '#636363' -sb '#4d87c7' -sf '#c3c3c3'"
 
 # new default command aliases

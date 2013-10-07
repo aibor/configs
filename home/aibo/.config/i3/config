@@ -192,6 +192,7 @@ for_window [class="^URxvt$"] border 1pixel
 for_window [class="^Keepassx$"] floating enable
 for_window [class="^MPlayer$"] floating enable
 for_window [class="^Viewnior$"] floating enable
+for_window [class="^Vinagre$"] floating enable
 #new_float normal 1
 
 # key binding that toggles the styles we like
