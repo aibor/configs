@@ -1,3 +1,5 @@
+! vim: ft=xdefaults
+!
 ! rxvt-unicode ---------------------------------------------------------------
 
 ! font preference
@@ -64,34 +66,34 @@ xterm*metaSendsEscape: true
 ! color scheme ---------------------------------------------------------------
 
 !*background: rgb:10/10/10
-URxvt*background: rgb:00/00/00
-URxvt*foreground: rgb:d3/d3/d3
-
-! Black
-!*color0:  #2E3436
-*color0:  #000000
-*color8:  #555753
-! Red
-*color1:  #CC0000
-*color9:  #EF2929
-! Green
-*color2:  #4E9A06
-*color10: #8AE234
-! Yellow
-*color3:  #C4A000
-*color11: #FCE94F
-! Blue
-*color4:  #3465A4
-*color12: #729FCF
-! Purple
-*color5:  #75507B
-*color13: #AD7FA8
-! Cyan
-*color6:  #06989A
-*color14: #34E2E2
-! White
-*color7:  #D3D7CF
-*color15: #EEEEEC
+!URxvt*background: rgb:00/00/00
+!URxvt*foreground: rgb:d3/d3/d3
+!
+!! Black
+!!*color0:  #2E3436
+!*color0:  #000000
+!*color8:  #555753
+!! Red
+!*color1:  #CC0000
+!*color9:  #EF2929
+!! Green
+!*color2:  #4E9A06
+!*color10: #8AE234
+!! Yellow
+!*color3:  #C4A000
+!*color11: #FCE94F
+!! Blue
+!*color4:  #3465A4
+!*color12: #729FCF
+!! Purple
+!*color5:  #75507B
+!*color13: #AD7FA8
+!! Cyan
+!*color6:  #06989A
+!*color14: #34E2E2
+!! White
+!*color7:  #D3D7CF
+!*color15: #EEEEEC
 
 ! Digerati {{{
 !*color0:  #303030
@@ -111,6 +113,53 @@ URxvt*foreground: rgb:d3/d3/d3
 !*color14: #4bb5c1
 !*color15: #e2e2e5
 ! }}}
+
+! Hybrid Terminal Colours --------------------- 
+ 
+! Tomorrow-Night Palette
+!#define t_background #1D1F21
+!#define t_background #000000
+#define t_background #101010
+#define t_current_line #282A2E
+#define t_selection #373B41
+#define t_foreground #C5C8C6
+#define t_comment #707880
+#define t_red #CC6666
+#define t_orange #DE935F
+#define t_yellow #F0C674
+#define t_green #B5BD68
+#define t_aqua #8ABEB7
+#define t_blue #81A2BE
+#define t_purple #B294BB
+ 
+URxvt*background: t_background
+URxvt*foreground: t_foreground
+! black
+*color0: t_current_line
+*color8: t_selection
+! red
+*color1: #A54242
+*color9: t_red
+! green
+*color2: #8C9440
+*color10: t_green
+! yellow
+*color3: t_orange
+*color11: t_yellow
+! blue
+*color4: #5F819D
+*color12: t_blue
+! magenta
+*color5: #85678F
+*color13: t_purple
+! cyan
+*color6: #5E8D87
+*color14: t_aqua
+! white
+*color7: t_comment
+*color15: t_foreground
+
+!------------
 
 Xcursor.theme:  whiteglass
 Xcursor.size:  16 

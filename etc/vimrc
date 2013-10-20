@@ -69,7 +69,9 @@
 
     if &t_Co > 2 || has("gui_running")
       syntax on
-      colorscheme desert
+      "colorscheme desert
+      let g:hybrid_use_Xresources = 1
+      colorscheme hybrid
       set hlsearch
       set colorcolumn=0
       let s:color_column_old = 80       " toggle colorcolumn after 80 chars
