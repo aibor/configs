@@ -77,20 +77,20 @@ alias getexternalip='curl ip.aibor.de ; echo'
 
 
 ##### Functions #####
-function findall() {
+findall() {
   find / -name "*$@*" 2>/dev/null
 }
 
-function env() {
+env() {
   exec /usr/bin/env "$@" | grep -v -e ^LESS_TERMCAP_ -e ^LS_COLORS |
   column -t -s = | sed -e s/^/$'\e\[1;33m'/ -e s/\ /\&$'\e\[0;0m'/
 }
 
-function mergepdf() {
+mergepdf() {
   gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=$1 $@ 
 } 
 
-function bak() {
+bak() {
   local e=1 i
   (($#)) || return
   for i; do
@@ -101,7 +101,7 @@ function bak() {
   return $e
 }
 
-function sshkchk() {
+sshkchk() {
   local i=0
   while [[ i -lt 3 ]] &&
       [[ SSH_AGENT_PID ]] && 
@@ -113,7 +113,7 @@ function sshkchk() {
   done
 }
 
-function sysup() {
+sysup() {
   sudo pacman -Syu
   echo -e "\033[1;34m:: \033[1;37mStarte AUR Aktualisierung...\033[0m"
   if [ $(cower -qub | wc -l) -gt 0 ]; then

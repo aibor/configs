@@ -6,7 +6,7 @@ do
   mpc=$(mpc)
   if grep -q '\[playing\]' <<< "$mpc"
   then
-    playing="{\"name\":\"mpd\",\"full_text\":\" "$(head -n1 <<< "$mpc" | sed -r 's/["!&]/\\&/g;s/'\''/`/g')" \"},"
+    playing="{\"name\":\"mpd\",\"full_text\":\" "$(head -n1 <<< "$mpc" | sed -r 's/["!]/\\&/g;s/'\''/`/g;s/&/and/g')" \"},"
     if grep -q 'random: on' <<< "$mpc"
     then
       line=${line/[/[{\"name\":\"mpd_rnd\",\"color\":\"\#aaaaaa\",\"full_text\":\" RND \"\},}

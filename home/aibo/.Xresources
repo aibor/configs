@@ -39,6 +39,7 @@ URxvt.tabbed.tab-bg:    -1
 
 ! URL-handling
 URxvt.url-launcher:      /usr/bin/firefox
+!URxvt.url-launcher:      /usr/local/bin/linkswitch.sh
 !urxvtq.url-launcher:     /usr/bin/firefox
 URxvt.matcher.button:   1 
 

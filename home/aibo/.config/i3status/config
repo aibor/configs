@@ -34,7 +34,7 @@ ethernet br0 {
 }
 
 run_watch DHCP {
-        pidfile = "/run/dhcpcd*.pid"
+        pidfile = "/run/dhcpcd-br0.pid"
         #format = " %title: %status "
         format = " %title "
 }

@@ -233,10 +233,29 @@ bindsym XF86AudioPlay exec --no-startup-id /usr/bin/mpc -q toggle
 bindsym XF86AudioNext exec --no-startup-id /usr/bin/mpc -q next
 bindsym XF86AudioPrev exec --no-startup-id /usr/bin/mpc -q prev
 
+mode "textinsert" {
+   # workaround selftriggering by prefixing each xdotool type command with a minus
+        bindsym minus mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+
+        bindsym s exec /home/aibo/.config/i3/insert_text.sh sgh
+        bindsym d exec /home/aibo/.config/i3/insert_text.sh dsm
+        bindsym k exec /home/aibo/.config/i3/insert_text.sh 
+}
+
+bindsym $mod+m mode "textinsert"
+
 # autostart
 exec --no-startup-id numlockx on
 exec --no-startup-id urxvtd -q -f -o
-exec --no-startup-id dropbox start
+# xdotool keyboard layout workaround
+# https://code.google.com/p/semicomplete/issues/detail?id=13
+exec --no-startup-id setxkbmap de nodeadkeys
+
+## systemd does this for me now
+#exec --no-startup-id dropbox start
+#
 exec --no-startup-id pidof mpdscribble > /dev/null || mpdscribble
 exec --no-startup-id sleep 60 && /usr/local/bin/backuperinnerung
 exec --no-startup-id thunderbird
