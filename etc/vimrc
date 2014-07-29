@@ -91,6 +91,16 @@
         \ if line("'\"") > 1 && line("'\"") <= line("$") |
         \   exe "normal! g`\"" |
         \ endif
+      " act perl compliant
+      autocmd FileType perl setlocal ts=4 sw=4 tw=80 nocindent
+      " Commenting blocks of code.
+      autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+      autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+      autocmd FileType perl             let b:comment_leader = '# '
+      autocmd FileType conf,fstab       let b:comment_leader = '# '
+      autocmd FileType tex              let b:comment_leader = '% '
+      autocmd FileType mail             let b:comment_leader = '> '
+      autocmd FileType vim              let b:comment_leader = '" '
     endif " has("autocmd")
 
     " Convenient command to see the difference between the current buffer and 
@@ -148,6 +158,9 @@
     inoremap <c-p> <ESC>/%\u.\{-1,}%<cr>c/%/e<cr>
     " space bar unhighlights search
     :nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
+    " un-/commenting made easy
+    noremap <silent> ,cc :<C-B>silent <C-E>s/^\( *\)/\1<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+    noremap <silent> ,cu :<C-B>silent <C-E>s/^\( *\)\V<C-R>=escape(b:comment_leader,'\/')<CR>/\1/e<CR>:nohlsearch<CR>
     " keep cursor centered
     :nnoremap j jzz
     :nnoremap k kzz

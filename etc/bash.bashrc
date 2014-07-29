@@ -71,6 +71,11 @@ alias du1='du --max-depth=1'
 alias openports='netstat -plnt'
 alias pgfl='pgrep -fl'
 
+# git aliases
+alias gll='git log --graph --pretty=oneline --abbrev-commit'
+alias gdc='git diff --cached'
+alias gds='git diff --staged'
+
 # special crap
 alias mirrorupdate='sudo reflector --sort rate -l 5 -p http --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
 alias getexternalip='curl ip.aibor.de ; echo'

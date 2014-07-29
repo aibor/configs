@@ -182,7 +182,8 @@ bar {
         output VGA1
         workspace_buttons yes
         position top
-        status_command none
+        #status_command i3status -c /home/aibo/.config/i3status/right
+        status_command /home/aibo/.config/i3/conky-bar.sh
         tray_output none
 }
 
@@ -192,6 +193,7 @@ new_window 1pixel
 for_window [class="^URxvt$"] border 1pixel
 for_window [class="^Keepassx$"] floating enable
 for_window [class="^MPlayer$"] floating enable
+for_window [class="^mpv$"] floating enable
 for_window [class="^Viewnior$"] floating enable
 for_window [class="^Vinagre$"] floating enable
 #new_float normal 1
@@ -207,6 +209,7 @@ assign [class="^Firefox$"] $ws1
 assign [class="^Thunderbird$"] $ws2
 assign [class="^Liferea$"] $ws3
 assign [class="^MPlayer$"] $ws3
+assign [class="^mpv$"] $ws3
 assign [class="^Zathura$"] $ws4
 assign [class="^.ibre.ffice.*$"] $ws9
 
@@ -229,9 +232,9 @@ bindsym $mod+Delete exec --no-startup-id i3lock -c '#000000' && systemctl hybrid
 bindsym XF86AudioLowerVolume exec --no-startup-id /usr/local/bin/mixer-osd voldown
 bindsym XF86AudioRaiseVolume exec --no-startup-id /usr/local/bin/mixer-osd volup
 bindsym XF86AudioMute exec --no-startup-id /usr/local/bin/mixer-osd mute
-bindsym XF86AudioPlay exec --no-startup-id /usr/bin/mpc -q toggle
-bindsym XF86AudioNext exec --no-startup-id /usr/bin/mpc -q next
-bindsym XF86AudioPrev exec --no-startup-id /usr/bin/mpc -q prev
+bindsym XF86AudioPlay exec --no-startup-id /usr/bin/mpc -q -h "2X1otROqGRpK4gSWFZX5Gx53c7TXdCBK@localhost" toggle
+bindsym XF86AudioNext exec --no-startup-id /usr/bin/mpc -q -h "2X1otROqGRpK4gSWFZX5Gx53c7TXdCBK@localhost" next
+bindsym XF86AudioPrev exec --no-startup-id /usr/bin/mpc -q -h "2X1otROqGRpK4gSWFZX5Gx53c7TXdCBK@localhost" prev
 
 mode "textinsert" {
    # workaround selftriggering by prefixing each xdotool type command with a minus
@@ -251,7 +254,7 @@ exec --no-startup-id numlockx on
 exec --no-startup-id urxvtd -q -f -o
 # xdotool keyboard layout workaround
 # https://code.google.com/p/semicomplete/issues/detail?id=13
-exec --no-startup-id setxkbmap de nodeadkeys
+#exec --no-startup-id setxkbmap de nodeadkeys
 
 ## systemd does this for me now
 #exec --no-startup-id dropbox start

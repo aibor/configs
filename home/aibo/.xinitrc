@@ -1,5 +1,6 @@
 #!/bin/sh
 
+xrandr --output HDMI1 --auto --primary
 xset +fp /usr/share/fonts/local
 xset fp rehash
 xset -dpms
