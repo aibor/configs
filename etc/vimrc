@@ -1,4 +1,6 @@
 " last edited: 2013-08-24 14:56:54 CEST
+"
+" "http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/12201181220118#1220118
 
 
 "============== environment settings ==============
@@ -18,6 +20,7 @@
     endif
     set spelllang=de
     set scrolloff=10
+    set hidden
 
 
 "============== status line options ==============
@@ -37,6 +40,7 @@
     set history=250                   " how many commands to keep 
     set laststatus=2
     set statusline=\ \%f%m%r%h%w\ ::\ %y\ [%{&ff}]\%=\ [%p%%:\ %l/%L][%c]\ 
+    set lcs=tab:\|\ ,trail:.          " show trailing spaces
 
 
 "============== searching, higlighting and folding ==============
@@ -176,6 +180,6 @@
     MapToggle <F2> paste
     MapToggle <F3> hlsearch
     MapToggle <F5> spell
-    MapToggle <F8> wrap
+    MapToggle <F8> wrap  
 
 

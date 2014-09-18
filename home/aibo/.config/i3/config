@@ -232,9 +232,9 @@ bindsym $mod+Delete exec --no-startup-id i3lock -c '#000000' && systemctl hybrid
 bindsym XF86AudioLowerVolume exec --no-startup-id /usr/local/bin/mixer-osd voldown
 bindsym XF86AudioRaiseVolume exec --no-startup-id /usr/local/bin/mixer-osd volup
 bindsym XF86AudioMute exec --no-startup-id /usr/local/bin/mixer-osd mute
-bindsym XF86AudioPlay exec --no-startup-id /usr/bin/mpc -q -h "2X1otROqGRpK4gSWFZX5Gx53c7TXdCBK@localhost" toggle
-bindsym XF86AudioNext exec --no-startup-id /usr/bin/mpc -q -h "2X1otROqGRpK4gSWFZX5Gx53c7TXdCBK@localhost" next
-bindsym XF86AudioPrev exec --no-startup-id /usr/bin/mpc -q -h "2X1otROqGRpK4gSWFZX5Gx53c7TXdCBK@localhost" prev
+bindsym XF86AudioPlay exec --no-startup-id /usr/bin/mpc -q toggle
+bindsym XF86AudioNext exec --no-startup-id /usr/bin/mpc -q next
+bindsym XF86AudioPrev exec --no-startup-id /usr/bin/mpc -q prev
 
 mode "textinsert" {
    # workaround selftriggering by prefixing each xdotool type command with a minus
@@ -248,6 +248,9 @@ mode "textinsert" {
 }
 
 bindsym $mod+m mode "textinsert"
+
+bindsym $mod+p mark marked
+bindsym $mod+o [con_mark="marked"] focus
 
 # autostart
 exec --no-startup-id numlockx on

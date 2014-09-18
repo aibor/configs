@@ -21,3 +21,4 @@ export HISTCONTROL=erasedups:ignorespace
 export HISTSIZE=10000
 export HISTFILESIZE=""
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+export MPD_HOST="2X1otROqGRpK4gSWFZX5Gx53c7TXdCBK@localhost"
