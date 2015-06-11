@@ -29,7 +29,7 @@ URxvt*internalBorder:   5
 URxvt.depth:      32
 
 ! extensions
-URxvt.perl-ext-common:	default,clipboard,matcher
+URxvt.perl-ext-common:	default,matcher
 
 ! tabbed
 URxvt.tabbed.tabbar-fg: 14

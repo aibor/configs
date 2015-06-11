@@ -1,13 +1,10 @@
-" last edited: 2013-08-24 14:56:54 CEST
+" last edited: 2015-04-15 23:59:51 CEST
 "
 " "http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/12201181220118#1220118
 
 
 "============== environment settings ==============
 
-    " Use Vim settings, rather than Vi settings (much better!).
-    " This must be first, because it changes other options as a side effect.
-    runtime! archlinux.vim
     set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after 
     set runtimepath+=$HOME/.vim/after
     set nocompatible                        " we use vim, not vi!
@@ -33,8 +30,7 @@
     set linebreak                     " attempt to wrap lines cleanly
     set showmatch                     " show matching brackets and stuff 
     set backspace=indent,eol,start    " allow backspacing over everything
-    set backup                        " make backups of edited backups
-    set backupdir=~/.vim/backup       " where to store the backups
+    set nobackup                        " make backups of edited files
     set noswapfile
     set nowb
     set history=250                   " how many commands to keep 
@@ -58,6 +54,11 @@
     let g:loaded_matchparen=1         " disable parenthesis hlight plugin
     let g:is_bash=1                   " bash syntax the default for hlighting
     let g:vimsyn_noerror=1            " hack for correct syntax hlighting
+    " Suffixes that get lower priority when doing tab completion for filenames.
+    " These are files we are not likely to want to edit or read.
+    set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,
+          \.idx,.ilg,.inx,.out,.toc,.png,.jpg
+
 
 
 "============== indenting ==============
@@ -73,14 +74,17 @@
 
     if &t_Co > 2 || has("gui_running")
       syntax on
-      "colorscheme desert
-      let g:hybrid_use_Xresources = 1
-      colorscheme hybrid
+      colorscheme desert
       set hlsearch
       set colorcolumn=0
       let s:color_column_old = 80       " toggle colorcolumn after 80 chars
     endif
 
+    if has('gui_running')
+      " Make shift-insert work like in Xterm
+      map <S-Insert> <MiddleMouse>
+      map! <S-Insert> <MiddleMouse>
+    endif
 
 "============== automagic ==============
 
@@ -96,7 +100,7 @@
         \   exe "normal! g`\"" |
         \ endif
       " act perl compliant
-      autocmd FileType perl setlocal ts=4 sw=4 tw=80 nocindent
+      autocmd FileType perl,python setlocal ts=4 sw=4 tw=80 nocindent
       " Commenting blocks of code.
       autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
       autocmd FileType sh,ruby,python   let b:comment_leader = '# '
@@ -163,8 +167,10 @@
     " space bar unhighlights search
     :nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
     " un-/commenting made easy
-    noremap <silent> ,cc :<C-B>silent <C-E>s/^\( *\)/\1<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
-    noremap <silent> ,cu :<C-B>silent <C-E>s/^\( *\)\V<C-R>=escape(b:comment_leader,'\/')<CR>/\1/e<CR>:nohlsearch<CR>
+    noremap <silent> ,cc :<C-B>silent 
+          \<C-E>s/^\( *\)/\1<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+    noremap <silent> ,cu :<C-B>silent 
+          \<C-E>s/^\( *\)\V<C-R>=escape(b:comment_leader,'\/')<CR>/\1/e<CR>:nohlsearch<CR>
     " keep cursor centered
     :nnoremap j jzz
     :nnoremap k kzz
